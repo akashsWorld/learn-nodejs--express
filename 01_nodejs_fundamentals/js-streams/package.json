@@ -1,0 +1,14 @@
+{
+  "name": "js-streams",
+  "version": "1.0.0",
+  "description": "A demo about how javascript streams works",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
