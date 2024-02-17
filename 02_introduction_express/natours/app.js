@@ -49,7 +49,7 @@ app.post("/name/:id/:surname?", (req, res) => {
 
 // Natours project code.
 
-app.get("/tours/:id?", (req, res) => {
+const getTours = (req, res) => {
   const id = req.params.id;
 
   if (id !== undefined) {
@@ -85,9 +85,9 @@ app.get("/tours/:id?", (req, res) => {
       });
     }
   );
-});
+};
 
-app.post("/tours", (req, res) => {
+const saveTour = (req, res) => {
   const data = req.body;
 
   fs.readFile(
@@ -117,9 +117,9 @@ app.post("/tours", (req, res) => {
       });
     }
   );
-});
+};
 
-app.delete("/tours/:id", (req, res) => {
+const deleteTours = (req, res) => {
   const id = req.params.id;
 
   fs.readFile(
@@ -153,6 +153,12 @@ app.delete("/tours/:id", (req, res) => {
       return;
     }
   );
-});
+};
+
+// In this way we can chain routs in this fashion which are same url but different methods.
+
+app.route("/api/v1/tours").post(saveTour);
+
+app.route("/api/v1/tours/:id?").delete(deleteTours).get(getTours);
 
 module.exports = app;
