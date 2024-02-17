@@ -2,10 +2,10 @@
   "name": "natours",
   "version": "1.0.0",
   "description": "Learn node js express.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start:dev": "nodemon app.js",
-    "start:prod": "node app.js"
+    "start:dev": "nodemon server.js",
+    "start:prod": "node server.js"
   },
   "author": "Akash Biswas",
   "license": "ISC",
